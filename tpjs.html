@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices JavaScript DOM</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .styled { color: white; background: black; padding: 5px; }
+        .red { color: red; }
+        .green { color: green; }
+        .black { color: black; }
+        .color-box { width: 40px; height: 40px; display: inline-block; cursor: pointer; margin: 5px; border-radius: 4px; }
+        .active { background-color: #ddd; }
+        .tab-content { display: none; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+
+<h1>Exercices JavaScript — Manipulation du DOM</h1>
+
+<!-- Exercice 1 -->
+<section id="ex1">
+    <h2>Exercice 1 : Changer le texte</h2>
+    <p>Texte original</p>
+    <button onclick="changeText()">Changer le texte</button>
+</section>
+
+<hr>
+
+<!-- Exercice 2 -->
+<section id="ex2">
+    <h2>Je suis un titre</h2>
+    <button onclick="changeColor('red')">Rouge</button>
+    <button onclick="changeColor('green')">Vert</button>
+    <button onclick="changeColor('blue')">Bleu</button>
+</section>
+
+<hr>
+
+<!-- Exercice 3 -->
+<section id="ex3">
+    <h2>Exercice 3 : Ajouter du HTML</h2>
+    <div class="box" style="padding:10px; border:1px solid black;"></div>
+    <button onclick="addHTML()">Ajouter du contenu</button>
+    <button onclick="clearHTML()">Effacer</button>
+</section>
+
+<hr>
+
+<!-- Exercice 4 -->
+<section id="ex4">
+    <h2>Exercice 4 : Ajouter et enlever des classes</h2>
+    <p>Je suis un paragraphe normal</p>
+    <button onclick="addStyle()">Ajouter style</button>
+    <button onclick="removeStyle()">Enlever style</button>
+    <button onclick="toggleStyle()">Basculer style</button>
+</section>
+
+<hr>
+
+<!-- Exercice 5 -->
+<section id="ex5">
+    <h2>Exercice 5 : Modifier plusieurs éléments</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <button onclick="colorAll()">Colorier tous</button>
+    <button onclick="numberAll()">Numéroter</button>
+</section>
+
+<hr>
+
+<!-- Exercice 6 -->
+<section id="ex6">
+    <h2>Exercice 6 : Sélecteur de couleur</h2>
+    <div>
+        <div class="color-box" style="background:red" onclick="setPageColor('red')"></div>
+        <div class="color-box" style="background:green" onclick="setPageColor('green')"></div>
+        <div class="color-box" style="background:blue" onclick="setPageColor('blue')"></div>
+        <div class="color-box" style="background:yellow" onclick="setPageColor('yellow')"></div>
+    </div>
+    <br>
+    <button onclick="resetColor()">Réinitialiser</button>
+</section>
+
+<hr>
+
+<!-- Exercice 7 -->
+<section id="ex7">
+    <h2>Exercice 7 : Formulaire dynamique</h2>
+
+    <label>Votre nom</label><br>
+    <input type="text" oninput="updateName()"><br><br>
+
+    <label>Choisir une couleur</label><br>
+    <select onchange="updateColor()">
+        <option value="black">Noir</option>
+        <option value="red">Rouge</option>
+        <option value="green">Vert</option>
+        <option value="blue">Bleu</option>
+    </select>
+
+    <p class="result">Votre nom apparaîtra ici</p>
+</section>
+
+<hr>
+
+<!-- Exercice 8 -->
+<section id="ex8">
+    <h2>Exercice 8 : Liste TODO</h2>
+    <input type="text" placeholder="Nouvelle tâche">
+    <button onclick="addTask()">Ajouter</button>
+    <button onclick="clearTasks()">Tout effacer</button>
+
+    <ul></ul>
+</section>
+
+<hr>
+
+<!-- Exercice 9 -->
+<section id="ex9">
+    <h2>Exercice 9 : Compteur</h2>
+    <h1 class="counter black">0</h1>
+
+    <button onclick="plusOne()">+1</button>
+    <button onclick="minusOne()">-1</button>
+    <button onclick="resetCounter()">Reset</button>
+
+    <p>Rouge si négatif, vert si positif, noir si zéro</p>
+</section>
+
+<hr>
+
+<!-- Exercice 10 -->
+<section id="ex10">
+    <h2>Exercice 10 : Onglets</h2>
+
+    <button onclick="openTab(0)">Onglet 1</button>
+    <button onclick="openTab(1)">Onglet 2</button>
+    <button onclick="openTab(2)">Onglet 3</button>
+
+    <div class="tab-content" style="display:block">
+        Contenu de l'onglet 1 <br>Lorem ipsum dolor sit amet.
+    </div>
+    <div class="tab-content">
+        Contenu de l'onglet 2 <br>Dolor sit amet consectetur.
+    </div>
+    <div class="tab-content">
+        Contenu de l'onglet 3 <br>Ut enim ad minim veniam.
+    </div>
+</section>
+
+<script src="tp.js"></script>
+
+</body>
+</html>
